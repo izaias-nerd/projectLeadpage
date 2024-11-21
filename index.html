@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>My Page</title>
+</head>
+<body>
+    <header>
+        <p>My page</p>
+    </header>
+         <div class="container my-5">
+      
+            <div class="row">
+           
+            <div id="saudacao">Carregando saudação...</div>
+
+            </div>
+        </div>
+   
+        <div class="countdown">
+            <h1>Oferta acaba em:</h1>
+            <div id="timer">
+                <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+            </div>
+        </div>
+        <div id="cookie-banner" style="display: none;">
+            <p>
+              Este site utiliza cookies para personalizar sua experiência, analisar o tráfego e melhorar nossos serviços. 
+              Alguns cookies são essenciais para o funcionamento do site, enquanto outros nos ajudam a oferecer conteúdos e anúncios personalizados. 
+              Para mais informações, leia nossa <a href="/politica-de-cookies" target="_blank">Política de Cookies</a>.
+            </p>
+            <div>
+              <button id="accept-all-cookies">Aceitar Todos</button>
+              <button id="reject-non-essential">Rejeitar Não Essenciais</button>
+              <button id="manage-preferences">Gerenciar Preferências</button>
+            </div>
+          </div>
+   
+    <script>
+        // Obtém a hora atual
+        let agora = new Date();
+        let hora = agora.getHours();
+        let saudacao;
+
+        // Determina a saudação apropriada
+        if (hora < 12) {
+            saudacao = "Bom dia";
+        } else if (hora < 19) {
+            saudacao = "Boa tarde";
+        } else {
+            saudacao = "Boa noite";
+        }
+
+        // Atualiza o conteúdo do DOM
+        document.getElementById("saudacao").innerText = saudacao;
+
+        // script.js
+
+// Define o tempo final da contagem regressiva
+const targetDate = new Date();
+targetDate.setMinutes(targetDate.getMinutes() + 10000); // Exemplo: adiciona 10 minutos a partir de agora
+
+function startCountdown() {
+    const now = new Date();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+        document.getElementById('timer').innerHTML = "Oferta Expirada!";
+        return;
+    }
+
+    const hours = String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+    const minutes = String(Math.floor((difference / (1000 * 60)) % 60)).padStart(2, '0');
+    const seconds = String(Math.floor((difference / 1000) % 60)).padStart(2, '0');
+
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+
+    setTimeout(startCountdown, 1000); // Atualiza a cada segundo
+}
+
+// Inicia o cronômetro ao carregar a página
+startCountdown();
+
+    </script>
+
+    </script>
+   
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const banner = document.getElementById("cookie-banner");
+      const cookieConsent = localStorage.getItem("cookieConsent");
+  
+      if (!cookieConsent) {
+        banner.style.display = "block";
+      }
+  
+      document.getElementById("accept-all-cookies").addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "accepted");
+        banner.style.display = "none";
+      });
+  
+      document.getElementById("reject-non-essential").addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "rejected");
+        banner.style.display = "none";
+      });
+  
+      document.getElementById("manage-preferences").addEventListener("click", function () {
+        alert("Tela para gerenciar categorias de cookies ainda não implementada.");
+      });
+    });
+  </script>
+      
+    <footer>
+        <p>Copyright 2024 InfodevBrasil. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

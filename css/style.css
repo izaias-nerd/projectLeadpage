@@ -1,0 +1,155 @@
+/* Reseta estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+
+header{
+    padding: 48px;
+    width: auto;
+    color: #fdfafa;
+    background-color: #f86604;
+}
+
+/* Cabeçalhos */
+h1, h2, h3, h4, h5, h6 {
+    color: #0d8bd9; /* Cor personalizada para o projeto */
+    margin-bottom: 20px;
+}
+
+/* Links */
+a {
+    color: #0e9af1;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3eaef4;
+    text-decoration: underline;
+}
+
+/* Botões */
+.btn-custom {
+    background-color: #0d8bd9; /* Cor principal */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0e9af1;
+}
+
+/* Estrutura de Layout */
+.container {
+    width: 30%;
+    margin: left;
+    background-color: #f1eded;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(206, 6, 6, 0.1);
+    border-radius: 8px;
+}
+
+/* Exemplo de grade */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.col {
+    flex: 1;
+    padding: 10px;
+}
+
+
+#timer {
+    font-size: 2em;
+    font-weight: bold;
+    color: #dc3545;
+    padding: 8px;
+}
+
+#timer, h1{
+    margin: 20px;
+}
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    font-size: 14px;
+  }
+  #cookie-banner a {
+    color: #0d8bd9;
+    text-decoration: underline;
+  }
+  #cookie-banner button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  #accept-all-cookies {
+    background-color: #4caf50;
+    color: white;
+  }
+  #reject-non-essential {
+    background-color: #f44336;
+    color: white;
+  }
+  #manage-preferences {
+    background-color: #ffa726;
+    color: white;
+  }
+/* Rodapé */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+    font-size: 14px;
+    color: #fdfafa;
+    background-color: #f86604;
+}
+
+
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
+        background-color: #e0e0e0; /* Define um fundo diferente */
+    }
+
+    .container {
+        width: 100%; /* Ocupa toda a largura da tela */
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column; /* Alinha itens verticalmente */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 12px; /* Fonte menor para telas ainda menores */
+    }
+
+    .container {
+        padding: 10px; /* Reduz o padding */
+    }
+}
